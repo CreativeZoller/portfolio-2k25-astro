@@ -1,0 +1,107 @@
+---
+import IconWrapper from './IconWrapper';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import FooterBrand from './FooterBrand.astro';
+// Social media icons with their respective components
+// todo: use proper URLs
+const socialIcons = [
+    { icon: "mingcute:facebook-fill", name: "Facebook", url: "https://facebook.com" },
+    { icon: "mingcute:twitter-fill", name: "Twitter", url: "https://twitter.com" },
+    { icon: "mingcute:instagram-line", name: "Instagram", url: "https://instagram.com" },
+    { icon: "mingcute:linkedin-line", name: "LinkedIn", url: "https://linkedin.com" },
+    { icon: "mingcute:earth-fill", name: "Website", url: "https://yourwebsite.com" }
+];
+
+// todo: use proper URLs
+const footerSections = [
+    {
+        title: "Quick Links",
+        links: [
+            { text: "Home", url: "/" },
+            { text: "Solutions", url: "/solutions" },
+            { text: "FAQ", url: "/faq" },
+            { text: "Recent Contents", url: "/blog" }
+        ],
+    },
+    {
+        title: "Resources",
+        links: [
+            { text: "Blog Posts", url: "/blog" },
+            { text: "Podcasts", url: "/podcasts" },
+            { text: "Portfolio", url: "/portfolio" },
+            { text: "Case Studies", url: "/case-studies" }
+        ],
+    },
+    {
+        title: "Legal & Policies",
+        links: [
+            { text: "Privacy Policy", url: "/privacy" },
+            { text: "Terms & Conditions", url: "/terms" },
+            { text: "Copyright Notice", url: "/copyright" }
+        ],
+    },
+    {
+        title: "Get In Touch",
+        links: [
+            { text: "Contact Us", url: "/contact" },
+            { text: "Supports & Donations", url: "/support" }
+        ],
+    },
+];
+const settings = {
+    languageSwitcher: false
+};
+---
+
+<footer class="full-bleed bg-dark text-white">
+    <div class="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20">
+        <div class="flex flex-col gap-12 py-10">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                {footerSections.map((section) => (
+                    <div class="flex flex-col gap-4">
+                        <h3 class="font-poppins font-medium text-lg">
+                            {section.title}
+                        </h3>
+                        <nav class="flex flex-col gap-3">
+                            {section.links.map(({ text, url }) => (
+                                <a 
+                                    href={url} 
+                                    class="text-base hover:text-accent-3 transition-colors"
+                                >
+                                    {text}
+                                </a>
+                            ))}
+                        </nav>
+                    </div>
+                ))}
+
+                <div class="flex flex-col gap-4">
+                    <h3 class="font-poppins font-medium text-lg">
+                        Follow Us
+                    </h3>
+                    <div class="flex gap-4">
+                    {socialIcons.map(({ icon, name, url }) => (
+                        <a
+                            href={url}
+                            class="text-white hover:text-accent-3 transition-colors"
+                            aria-label={`Follow us on ${name}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <IconWrapper icon={icon} client:load />
+                        </a>
+                    ))}
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-white/20" />
+
+            <div class="flex flex-col md:flex-row items-center md:items-start justify-between gap-4">
+                <FooterBrand />
+                {settings.languageSwitcher && <LanguageSwitcher />}
+            </div>
+        </div>
+    </div>
+</footer>

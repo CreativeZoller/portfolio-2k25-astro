@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Poppins:wght@600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --white: #fffbff;
+    --light: #eff1f3;
+    --dark: #223843;
+    --green: #5ea111;
+    --accent-1: #023047;
+    --accent-2: #d77a61;
+    --accent-3: #fca311;
+    --gradient: linear-gradient(
+        to bottom,
+        rgba(2, 48, 71, 0) 53%,
+        rgba(2, 48, 71, 1) 100%
+    );
+
+    --font-inter: 'Inter', sans-serif;
+    --font-poppins: 'Poppins', sans-serif;
+    font-display: swap;
+}
+
+@layer components {
+    .all-\[unset\] {
+        all: unset;
+    }
+
+    .full-bleed {
+        @apply relative w-[100vw] left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] overflow-x-hidden;
+        background: inherit;
+    }
+}
+
+@layer base {
+    html {
+        @apply scroll-smooth;
+        font-size: 20px;
+        
+        @media (min-width: 1024px) {
+            font-size: 16px;
+        }
+    }
+
+    body {
+        @apply bg-light text-dark dark:bg-dark dark:text-light overflow-x-hidden;
+        font-family: var(--font-inter);
+    }
+
+    footer {
+        @apply bg-dark text-white;
+        font-family: var(--font-inter);
+    }
+
+    .text-xs {
+        @apply text-[0.694rem] font-light;
+        font-family: var(--font-inter);
+    }
+
+    .text-sm {
+        @apply text-[0.833rem] font-normal;
+        font-family: var(--font-inter);
+    }
+
+    .text-base {
+        @apply text-[1rem] font-normal;
+        font-family: var(--font-inter);
+    }
+
+    .text-lg {
+        @apply text-[1.2rem] font-semibold;
+        font-family: var(--font-poppins);
+    }
+
+    .text-xl {
+        @apply text-[1.44rem] font-semibold;
+        font-family: var(--font-poppins);
+    }
+
+    .text-2xl {
+        @apply text-[1.728rem] font-semibold;
+        font-family: var(--font-poppins);
+    }
+
+    .text-3xl {
+        @apply text-[2.074rem] font-semibold;
+        font-family: var(--font-poppins);
+    }
+
+    .text-4xl {
+        @apply text-[2.488rem] font-semibold;
+        font-family: var(--font-poppins);
+    }
+
+    .text-5xl {
+        @apply text-[2.986rem] font-semibold;
+        font-family: var(--font-poppins);
+    }
+}
+
+@layer components {
+    .container-wrapper {
+        @apply container mx-auto px-4 sm:px-6 lg:px-8;
+    }
+
+    .section-padding {
+        @apply py-12 md:py-16 lg:py-24;
+    }
+}
+
+@layer utilities {
+    .grid-auto-fit {
+        @apply grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6;
+    }
+
+    .text-white {
+        color: var(--white);
+    }
+}

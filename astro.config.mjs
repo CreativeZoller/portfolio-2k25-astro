@@ -1,8 +1,9 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
-import icon from "astro-icon";
+import { defineConfig } from "astro/config";
+import tailwind from "@astrojs/tailwind";
+import react from "@astrojs/react";
 
-// https://astro.build/config
 export default defineConfig({
-    integrations: [icon()],
+    integrations: [tailwind(), react()],
 });
+// https://astro.build/config
