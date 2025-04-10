@@ -45,7 +45,7 @@
     }
 
     body {
-        @apply bg-light text-dark dark:bg-dark dark:text-light overflow-x-hidden;
+        @apply bg-light text-dark dark:bg-dark dark:text-light overflow-x-hidden relative;
         font-family: var(--font-inter);
     }
 
@@ -115,7 +115,27 @@
         @apply grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6;
     }
 
+    .hidden {
+        display: none;
+    }
+    
+    @media (min-width: 768px) {
+        .md\:block {
+            display: block;
+        }
+    }
+    
+    @media (min-width: 1024px) {
+        .lg\:block {
+            display: block;
+        }
+    }
+
     .text-white {
         color: var(--white);
+    }
+
+    .text-dark {
+        color: var(--dark);
     }
 }

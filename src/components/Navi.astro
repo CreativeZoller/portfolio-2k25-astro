@@ -1,0 +1,252 @@
+---
+import Icon from 'astro-icon';
+const settings = {
+    recentContents: false
+};
+---
+
+<header
+    class="transition-opacity duration-300 ease-in-out w-full py-4 z-40"
+    id="sticky-navbar"
+>
+    <div 
+        class="container flex items-center justify-between w-full mx-auto transition-colors duration-300"
+        id="navbar-container"
+    >
+        <div class="flex items-center">
+            <a href="/home" class="text-lg font-bold">
+                <div class="text-accent-1">
+
+                    <div class="block lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="130" height="45" viewBox="0 0 130 45" class="h-8 w-auto">
+                            <g>
+                                <path 
+                                    fill="currentColor"
+                                    fill-rule="evenodd" 
+                                    d="m0 44.621 14.275-19.726 5.932 2.93 8.46-13.757 7.21 4.313L47.611 0l21.831 26.98 9.862-14.718 10.297 15.09L99.67 5.867 130 41.387 113.603 28l2.544 8.784-16.644-20.24-8.453 18.364L80.7 22.652l-1.672 3.571 4.082 8.252-5.969-4.573-4.048 8.19-27.524-22.239 4.448 15.595-18.1-6.537 1.685 10.026-6.162-4.603L0 44.621Z" 
+                                    clip-rule="evenodd"
+                                />
+                            </g>
+                        </svg>
+                    </div>
+
+                    <div class="hidden lg:block">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="267" height="45" viewBox="0 0 267 45" class="h-8 w-auto">
+                            <g>
+                                <path 
+                                    fill="currentColor"
+                                    fill-rule="evenodd" 
+                                    d="m0 44.501 14.237-19.673 5.915 2.922 8.438-13.72 7.19 4.302L47.483 0l21.773 26.907 9.836-14.678 10.27 15.05L99.402 5.85l30.248 35.425-16.353-13.352 2.538 8.76-16.6-20.185-8.43 18.314L80.482 22.59l-1.666 3.562 4.071 8.23-5.953-4.562-4.038 8.168-27.45-22.178 4.436 15.552-18.052-6.519 1.681 10-6.145-4.591L0 44.5Z" 
+                                    clip-rule="evenodd"
+                                />
+                                <path 
+                                    fill="currentColor"
+                                    d="M154.329 15.444c.274 0 .537.113.731.314.194.2.303.473.303.757v.586c0 .284-.109.556-.303.756a1.02 1.02 0 0 1-.731.314h-1.582a1.004 1.004 0 0 0-.732.313 1.077 1.077 0 0 0-.303.757v9.105c0 .283-.109.555-.303.756a1.02 1.02 0 0 1-.731.313h-1.287a1.004 1.004 0 0 1-.732-.313 1.102 1.102 0 0 1-.303-.757v-9.104a1.102 1.102 0 0 0-.302-.757 1.006 1.006 0 0 0-.732-.314h-1.583c-.275 0-.538-.112-.732-.313a1.093 1.093 0 0 1-.304-.756v-.586a1.105 1.105 0 0 1 .303-.758 1.009 1.009 0 0 1 .733-.313h8.591-.001Zm7.833 2.727a1.029 1.029 0 0 0-.732.314 1.076 1.076 0 0 0-.302.756v.686c0 .59.463 1.07 1.034 1.07h2.427c.571 0 1.034.478 1.034 1.07v.488c0 .59-.463 1.069-1.034 1.069h-2.427a1.02 1.02 0 0 0-.732.313c-.193.2-.302.473-.302.756v.925c0 .59.463 1.07 1.034 1.07h3.015a1.004 1.004 0 0 1 .732.314 1.1 1.1 0 0 1 .303.756v.588a1.1 1.1 0 0 1-.303.756 1.028 1.028 0 0 1-.732.313h-6.372a1.02 1.02 0 0 1-.732-.313 1.088 1.088 0 0 1-.303-.756V16.515a1.103 1.103 0 0 1 .303-.757 1.029 1.029 0 0 1 .732-.314h6.372a1.011 1.011 0 0 1 .732.314 1.103 1.103 0 0 1 .303.757v.586a1.1 1.1 0 0 1-.303.756 1.03 1.03 0 0 1-.732.314h-3.015Zm6.138 4.239c0-1.38.295-2.61.884-3.692a6.36 6.36 0 0 1 2.464-2.527c1.053-.603 2.247-.906 3.582-.906 1.636 0 3.037.438 4.201 1.314a6.076 6.076 0 0 1 1.727 2.007 1.07 1.07 0 0 1-.014 1.037 1.021 1.021 0 0 1-.369.376.986.986 0 0 1-.502.138c.571.024-1.188.024-1.622.024a1 1 0 0 1-.481-.123 1.047 1.047 0 0 1-.37-.34 2.684 2.684 0 0 0-.891-.87 3.25 3.25 0 0 0-1.717-.458c-1.035 0-1.873.365-2.513 1.094-.642.73-.962 1.705-.962 2.927 0 1.22.32 2.195.962 2.924.64.73 1.478 1.094 2.513 1.094a3.244 3.244 0 0 0 1.717-.457c.358-.216.666-.511.902-.864a1.03 1.03 0 0 1 .366-.335.99.99 0 0 1 .474-.12c.434-.013 1.051-.013 1.622-.013.18 0 .358.047.514.14.157.092.287.225.379.385a1.098 1.098 0 0 1 .014 1.063 6.447 6.447 0 0 1-1.749 1.983c-1.164.869-2.565 1.303-4.201 1.303-1.335 0-2.529-.302-3.582-.905a6.37 6.37 0 0 1-2.464-2.518c-.589-1.074-.883-2.301-.883-3.681h-.001Zm26.91-6.966c.274 0 .537.113.731.314.194.2.303.473.303.757v11.83c0 .284-.109.556-.303.756a1.02 1.02 0 0 1-.731.314h-1.289a1.02 1.02 0 0 1-.731-.313 1.088 1.088 0 0 1-.303-.756v-3.613a1.09 1.09 0 0 0-.303-.756 1.017 1.017 0 0 0-.731-.313h-3.154c-.274 0-.537.112-.731.313-.194.2-.303.473-.303.756v3.613c0 .283-.109.555-.303.756a1.02 1.02 0 0 1-.731.313h-1.289a1.02 1.02 0 0 1-.731-.313 1.088 1.088 0 0 1-.303-.756V16.515a1.103 1.103 0 0 1 .303-.757 1.006 1.006 0 0 1 .731-.314h1.289c.274 0 .538.113.731.314.194.2.303.473.303.757v3.332c0 .284.109.556.303.756.194.2.457.314.731.314h3.154c.274 0 .537-.113.731-.314.194-.2.303-.472.303-.756v-3.332a1.103 1.103 0 0 1 .303-.757 1.006 1.006 0 0 1 .731-.314h1.289Zm15.592 13.971c-.161 0-.321-.039-.465-.114a1.036 1.036 0 0 1-.366-.319l-.172-.24a1.014 1.014 0 0 0-1.107-.394 1.026 1.026 0 0 0-.368.194 3.754 3.754 0 0 1-.762.514 4.53 4.53 0 0 1-2.129.498c-.89 0-1.673-.193-2.347-.578a3.975 3.975 0 0 1-1.552-1.561 4.492 4.492 0 0 1-.538-2.2c0-1.088.3-2.01.902-2.766a3.769 3.769 0 0 1 1.195-1.007c.232-.121.41-.33.497-.584a1.08 1.08 0 0 0-.033-.777c-.025-.117-.07-.223-.107-.328a3.952 3.952 0 0 1-.236-1.363c0-.597.157-1.162.472-1.692.313-.53.775-.955 1.383-1.273.608-.319 1.338-.478 2.189-.478 1.178 0 2.11.272 2.797.815.688.545 1.11 1.228 1.266 2.05.08.36.118.723.118 1.095a.673.673 0 0 1-.185.464.632.632 0 0 1-.448.193h-1.685a.847.847 0 0 1-.583-.235.903.903 0 0 1-.278-.58 1.057 1.057 0 0 0-.276-.707c-.17-.18-.398-.27-.686-.27a.825.825 0 0 0-.631.25.882.882 0 0 0-.253.647c0 .185.043.375.127.566.086.192.233.435.442.727l5.612 7.74a1.107 1.107 0 0 1 .099 1.122 1.056 1.056 0 0 1-.383.432 1 1 0 0 1-.545.159h-.964Zm-5.351-2.666c.446 0 .82-.154 1.12-.459a1.56 1.56 0 0 0 .452-1.155 1.545 1.545 0 0 0-.968-1.463 1.504 1.504 0 0 0-.602-.108c-.446 0-.816.149-1.11.448a1.55 1.55 0 0 0-.442 1.125 1.6 1.6 0 0 0 .442 1.153 1.486 1.486 0 0 0 1.11.458h-.002Zm23-11.305a1.006 1.006 0 0 1 .731.314 1.064 1.064 0 0 1 .303.757v.586c0 .284-.109.556-.303.756a1.016 1.016 0 0 1-.731.314h-1.583a1.029 1.029 0 0 0-.732.314 1.076 1.076 0 0 0-.302.756v9.105c0 .283-.109.555-.303.756a1.02 1.02 0 0 1-.732.313h-1.288a1.02 1.02 0 0 1-.732-.313 1.087 1.087 0 0 1-.302-.756V19.24a1.103 1.103 0 0 0-.303-.757 1.029 1.029 0 0 0-.732-.313h-1.583a1.02 1.02 0 0 1-.731-.314 1.096 1.096 0 0 1-.303-.756v-.586a1.103 1.103 0 0 1 .303-.757 1.006 1.006 0 0 1 .731-.314h8.592Zm11.074 13.971c-.183 0-.364-.05-.522-.146a1.057 1.057 0 0 1-.379-.4l-2.57-4.728h-.225a.561.561 0 0 0-.411.176.614.614 0 0 0-.17.424v3.605a1.1 1.1 0 0 1-.303.756 1.006 1.006 0 0 1-.731.313h-1.288a1.007 1.007 0 0 1-.732-.313 1.102 1.102 0 0 1-.303-.757v-11.83c0-.59.464-1.071 1.035-1.071h4.6c1.087 0 2.012.192 2.778.578.766.385 1.338.911 1.718 1.581.382.68.578 1.453.569 2.24 0 .928-.259 1.758-.775 2.487-.339.473-.778.86-1.283 1.134a1.035 1.035 0 0 0-.491.643 1.087 1.087 0 0 0 .106.812c.447.82 1.099 1.954 1.632 2.88a1.104 1.104 0 0 1 .01 1.076 1.06 1.06 0 0 1-.38.396 1.008 1.008 0 0 1-.52.144h-1.365Zm-4.277-8.751c0 .59.464 1.07 1.036 1.07h1.046c.615 0 1.077-.154 1.383-.458.308-.305.462-.737.462-1.294 0-.531-.154-.95-.462-1.254-.306-.306-.768-.457-1.383-.457h-1.046a1.01 1.01 0 0 0-.733.313 1.103 1.103 0 0 0-.303.757v1.323Zm14.314-2.493a1.029 1.029 0 0 0-.732.314 1.076 1.076 0 0 0-.302.756v.686c0 .59.463 1.07 1.034 1.07h2.427c.571 0 1.034.478 1.034 1.07v.488c0 .59-.463 1.069-1.034 1.069h-2.427a1.02 1.02 0 0 0-.732.313c-.194.2-.302.473-.302.756v.925c0 .59.463 1.07 1.034 1.07h3.015c.275 0 .538.113.732.314.194.2.303.472.303.756v.588a1.09 1.09 0 0 1-.304.755c-.194.2-.456.314-.731.314h-6.372a1.02 1.02 0 0 1-.732-.313 1.088 1.088 0 0 1-.303-.756V16.515c0-.284.109-.556.303-.757.194-.2.457-.314.732-.314h6.372c.275 0 .538.113.732.314.194.2.303.473.303.757v.586c-.001.284-.11.556-.304.756-.194.2-.456.313-.731.314h-3.015Zm14.965 11.244c-.319 0-.621-.154-.817-.413l-2.47-3.29a1.04 1.04 0 0 0-.522-.37 1.002 1.002 0 0 0-.632.012 1.042 1.042 0 0 0-.507.39 1.1 1.1 0 0 0-.192.623v1.977a1.102 1.102 0 0 1-.302.757 1.029 1.029 0 0 1-.732.314h-1.287a1.009 1.009 0 0 1-.733-.313 1.102 1.102 0 0 1-.303-.757v-11.83a1.105 1.105 0 0 1 .303-.758 1.027 1.027 0 0 1 .733-.313h1.287a1.006 1.006 0 0 1 .732.314 1.076 1.076 0 0 1 .302.757v1.932c0 .223.067.44.193.622.125.182.303.318.507.39a.998.998 0 0 0 .632.012c.206-.064.389-.193.521-.37l2.43-3.242c.097-.13.221-.234.363-.306a1.01 1.01 0 0 1 .456-.109h1.275c.195 0 .387.056.552.164.166.108.298.262.382.444a1.09 1.09 0 0 1-.129 1.134l-3.458 4.434a1.093 1.093 0 0 0-.002 1.341l3.663 4.715c.122.157.199.347.221.547a1.09 1.09 0 0 1-.477 1.028 1.007 1.007 0 0 1-.551.164h-1.438Z"
+                                />
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="hidden lg:flex items-center gap-4">
+            <nav aria-label="Main" class="relative z-10 flex max-w-max flex-1 items-center justify-center">
+                <ul class="flex items-center space-x-4">
+                    <li><a href="#" class="nav-link inline-flex items-center px-2 py-3 font-normal text-accent-1 text-base tracking-[0.50px]">About</a></li>
+                    <li><a href="#" class="nav-link inline-flex items-center px-2 py-3 font-normal text-accent-1 text-base tracking-[0.50px]">Solutions</a></li>
+                    <li><a href="#" class="nav-link inline-flex items-center px-2 py-3 font-normal text-accent-1 text-base tracking-[0.50px]">Pricing</a></li>
+                    <li><a href="#" class="nav-link inline-flex items-center px-2 py-3 font-normal text-accent-1 text-base tracking-[0.50px]">Choose Us</a></li>
+                    {settings.recentContents && (
+                        <li><a href="#" class="nav-link inline-flex items-center px-2 py-3 font-normal text-accent-1 text-base tracking-[0.50px]">Recent contents</a></li>
+                    )}
+                    <li><a href="#" class="nav-link inline-flex items-center px-2 py-3 font-normal text-accent-1 text-base tracking-[0.50px]">FAQ</a></li>
+                </ul>
+                <button class="ml-4 inline-flex items-center justify-center gap-2 p-2 h-[47px] w-[120px] rounded-xl border-2 border-accent-1 text-accent-1 font-normal hover:bg-accent-1 hover:text-white transition-colors">Contact Me</button>
+            </nav>
+        </div>
+
+        <div class="lg:hidden">
+            <button 
+                id="menu-toggle"
+                class="inline-flex items-center justify-center w-10 h-10 text-accent-1"
+                aria-label="Toggle menu"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="4" x2="20" y1="12" y2="12"></line>
+                    <line x1="4" x2="20" y1="6" y2="6"></line>
+                    <line x1="4" x2="20" y1="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>
+
+<div 
+    id="mobile-menu" 
+    class="fixed inset-0 invisible lg:hidden"
+    aria-hidden="true"
+>
+    <div 
+        id="mobile-backdrop" 
+        class="fixed inset-0 bg-black/50 opacity-0 transition-opacity duration-300"
+    ></div>
+    
+    <div class="fixed top-0 right-0 w-[280px] h-full bg-white transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+        <div class="p-4 flex justify-between items-center border-b">
+            <span class="text-lg font-bold text-accent-1">Menu</span>
+            <button 
+                id="close-menu" 
+                class="p-2 text-accent-1 hover:text-accent-2"
+                aria-label="Close menu"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        
+        <nav class="p-4">
+            <ul class="flex flex-col space-y-4">
+                <li><a href="#" class="nav-link block py-2 text-accent-1 hover:text-accent-2 transition-colors">About</a></li>
+                <li><a href="#" class="nav-link block py-2 text-accent-1 hover:text-accent-2 transition-colors">Solutions</a></li>
+                <li><a href="#" class="nav-link block py-2 text-accent-1 hover:text-accent-2 transition-colors">Pricing</a></li>
+                <li><a href="#" class="nav-link block py-2 text-accent-1 hover:text-accent-2 transition-colors">Choose Us</a></li>
+                {settings.recentContents && (
+                    <li><a href="#" class="nav-link block py-2 text-accent-1 hover:text-accent-2 transition-colors">Recent contents</a></li>
+                )}
+                <li><a href="#" class="nav-link block py-2 text-accent-1 hover:text-accent-2 transition-colors">FAQ</a></li>
+            </ul>
+            <button class="mt-8 w-full inline-flex items-center justify-center gap-2 p-2 h-[47px] rounded-xl border-2 border-accent-1 text-accent-1 font-normal hover:bg-accent-1 hover:text-white transition-colors">
+                Contact Me
+            </button>
+        </nav>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const navbar = document.getElementById('sticky-navbar');
+        const navbarContainer = document.getElementById('navbar-container');
+        const hero = document.querySelector('.section-padding');
+        const menuToggle = document.getElementById('menu-toggle');
+        const closeMenu = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const body = document.body;
+
+        // Handle sticky navbar
+        const handleScroll = () => {
+            if (!hero || !navbar || !navbarContainer) return;
+            
+            const heroBottom = (hero as HTMLElement).offsetTop + (hero as HTMLElement).offsetHeight;
+            
+            if (window.scrollY > heroBottom) {
+                navbar.classList.add(
+                    'fixed', 
+                    'top-4', 
+                    'left-1/2', 
+                    '-translate-x-1/2',
+                    'opacity-100',
+                    'container-wrapper',
+                    'rounded-2xl',
+                    'bg-white',
+                    'shadow-lg'
+                );
+                navbarContainer.classList.add(
+                    'mx-auto',
+                    'px-6'
+                );
+            } else {
+                navbar.classList.remove(
+                    'fixed',
+                    'top-4',
+                    'left-1/2',
+                    '-translate-x-1/2',
+                    'opacity-100',
+                    'container-wrapper',
+                    'rounded-2xl',
+                    'bg-white',
+                    'shadow-lg'
+                );
+                navbarContainer.classList.remove(
+                    'mx-auto',
+                    'px-6'
+                );
+            }
+        };
+
+        // Toggle mobile menu
+        const toggleMenu = () => {
+            mobileMenu?.classList.toggle('active');
+            body.classList.toggle('overflow-hidden');
+        };
+
+        // Event listeners
+        window.addEventListener('scroll', handleScroll);
+        menuToggle?.addEventListener('click', toggleMenu);
+        closeMenu?.addEventListener('click', toggleMenu);
+        mobileMenu?.querySelector('#mobile-backdrop')?.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (mobileMenu?.classList.contains('active') && 
+                !mobileMenu.querySelector('div:last-child')?.contains(e.target as Node) && 
+                !menuToggle?.contains(e.target as Node)) {
+                toggleMenu();
+            }
+        });
+
+        // Cleanup
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            menuToggle?.removeEventListener('click', toggleMenu);
+            closeMenu?.removeEventListener('click', toggleMenu);
+        };
+    });
+</script>
+
+<style>
+    #mobile-menu {
+        visibility: hidden;
+        transition: visibility 0s linear 0.3s;
+    }
+
+    #mobile-menu.active {
+        visibility: visible;
+        transition-delay: 0s;
+    }
+
+    #mobile-menu.active #mobile-backdrop {
+        opacity: 1;
+    }
+
+    #mobile-menu.active > div:last-child {
+        transform: translateX(0);
+    }
+
+    .nav-link {
+        position: relative;
+    }
+
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--accent-1);
+        transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after,
+    .nav-link:focus::after {
+        width: 100%;
+    }
+
+    #navbar-container {
+        width: 100%;
+        transition: background-color 0.3s ease, border-radius 0.3s ease, box-shadow 0.3s ease;
+    }
+</style>

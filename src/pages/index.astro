@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Homepage.astro';
-import Header from '../components/Header.astro';
+import Navi from "../components/Navi.astro";
+
 const pageData = {
     title: "Welcome to Astro",
     description: "A modern portfolio website built with Astro",
@@ -12,35 +13,35 @@ const pageData = {
 ---
 
 <Layout {...pageData}>
-	<main class="container-wrapper">
-		<section class="section-padding">
-			Hero section with paragraph
-		</section>
+    <main class="container-wrapper">
+        <section class="section-padding">
+            Hero section with paragraph
+        </section>
 
-		<Header />
+        <Navi />
 
-		<section class="section-padding">
-			About section
-		</section>
+        <section class="section-padding">
+            About section
+        </section>
 
-		<section class="section-padding">
-			Solutions section
-		</section>
+        <section class="section-padding">
+            Solutions section
+        </section>
 
-		<section class="section-padding">
-			Clients section
-		</section>
+        <section class="section-padding">
+            Clients section
+        </section>
 
-		<section class="section-padding">
-			Why choose us and process
-		</section>
+        <section class="section-padding">
+            Why choose us and process
+        </section>
 
-		<section class="section-padding">
-			Recent contents section
-		</section>
+        <section class="section-padding">
+            Recent contents section
+        </section>
 
-		<section class="section-padding">
-			FAQ section
-		</section>
-	</main>
+        <section class="section-padding">
+            FAQ section
+        </section>
+    </main>
 </Layout>
