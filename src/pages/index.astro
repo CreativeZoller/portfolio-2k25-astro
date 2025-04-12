@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Homepage.astro';
 import Navi from "../components/Navi.astro";
+import Hero from "../components/sections/Hero.astro";
 
 const pageData = {
     title: "Welcome to Astro",
@@ -10,13 +11,17 @@ const pageData = {
     image: "/images/hero.jpg",
     canonicalURL: "https://yoursite.com"
 };
+
+const heroData = {
+    background: "/heroimage.jpg",
+    heading: "Tech & Trek",
+    description: "At Tech & Trek, life is an adventure of coding and fatherhood. As a developer and a dad, I’m on a quest to build more than just software—I’m building a legacy. Follow my journey as I navigate through the intricacies of tech, the wonders of parenthood, and everything that lies beyond the screen."
+};
 ---
 
 <Layout {...pageData}>
     <main class="container-wrapper">
-        <section class="section-padding">
-            Hero section with paragraph
-        </section>
+        <Hero {...heroData} />
 
         <Navi />
 

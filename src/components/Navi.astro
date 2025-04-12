@@ -6,7 +6,7 @@ const settings = {
 ---
 
 <header
-    class="transition-opacity duration-300 ease-in-out w-full py-4 z-40"
+    class="transition-opacity container-wrapper duration-300 ease-in-out w-full py-4 z-30"
     id="sticky-navbar"
 >
     <div 
@@ -129,10 +129,10 @@ const settings = {
     document.addEventListener('DOMContentLoaded', () => {
         const navbar = document.getElementById('sticky-navbar');
         const navbarContainer = document.getElementById('navbar-container');
-        const hero = document.querySelector('.section-padding');
         const menuToggle = document.getElementById('menu-toggle');
         const closeMenu = document.getElementById('close-menu');
         const mobileMenu = document.getElementById('mobile-menu');
+        const hero = document.querySelector('section#hero-section');
         const body = document.body;
 
         // Handle sticky navbar
@@ -148,7 +148,6 @@ const settings = {
                     'left-1/2', 
                     '-translate-x-1/2',
                     'opacity-100',
-                    'container-wrapper',
                     'rounded-2xl',
                     'bg-white',
                     'shadow-lg'
@@ -164,7 +163,6 @@ const settings = {
                     'left-1/2',
                     '-translate-x-1/2',
                     'opacity-100',
-                    'container-wrapper',
                     'rounded-2xl',
                     'bg-white',
                     'shadow-lg'
