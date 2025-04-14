@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import IconWrapper from '../IconWrapper';
 
 interface Props {
     background: string;
@@ -90,18 +91,31 @@ const { background, heading, description } = Astro.props;
             </p>
         </div>
     </div>
+
+    <div 
+        class="scroller flex items-center gap-2 transform rotate-90"
+        id="scroller"
+        data-parallax="0.1"
+    >
+        <span class="uppercase tracking-wider text-sm">scroll</span>
+        <IconWrapper 
+            icon="mingcute:arrow-right-line"
+            client:load 
+        />
+    </div>
 </section>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const heading = document.getElementById('hero-heading');
         const description = document.getElementById('hero-description');
+        const scroller = document.getElementById('scroller');
         
         let lastScrollY = window.scrollY;
         let ticking = false;
 
         const updateParallax = () => {
-            const elements = [heading, description];
+            const elements = [heading, description, scroller];
             
             elements.forEach(element => {
                 if (!element) return;
@@ -112,7 +126,12 @@ const { background, heading, description } = Astro.props;
                 
                 if (visible) {
                     const yPos = -(window.scrollY * speed);
-                    element.style.transform = `translate3d(0, ${yPos}px, 0)`;
+                    if (element.id === 'scroller') {
+                        // Keep the rotation while adding parallax translation
+                        element.style.transform = `translate3d(0, ${yPos}px, 0) rotate(90deg)`;
+                    } else {
+                        element.style.transform = `translate3d(0, ${yPos}px, 0)`;
+                    }
                 }
             });
 

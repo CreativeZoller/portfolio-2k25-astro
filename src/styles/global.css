@@ -54,6 +54,13 @@
         font-family: var(--font-inter);
     }
 
+    .scroller {
+        @apply absolute bottom-3 right-8 z-30 text-accent-3;
+        font-family: var(--font-poppins);
+        transform-origin: right bottom;
+        animation: bounce 2s ease-in-out infinite;
+    }
+
     .text-xs {
         @apply text-[0.694rem] font-light;
         font-family: var(--font-inter);
@@ -98,6 +105,15 @@
         @apply text-[2.986rem] font-semibold;
         font-family: var(--font-poppins);
     }
+
+    @keyframes bounce {
+        0%, 100% {
+            transform: translateY(0) rotate(90deg);
+        }
+        50% {
+            transform: translateY(-10px) rotate(90deg);
+        }
+    }
 }
 
 @layer components {
@@ -138,4 +154,5 @@
     .text-dark {
         color: var(--dark);
     }
+
 }
