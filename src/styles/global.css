@@ -62,47 +62,47 @@
     }
 
     .text-xs {
-        @apply text-[0.694rem] font-light;
+        @apply text-[0.694rem] font-light !important;
         font-family: var(--font-inter);
     }
 
     .text-sm {
-        @apply text-[0.833rem] font-normal;
+        @apply text-[0.833rem] font-normal !important;
         font-family: var(--font-inter);
     }
 
     .text-base {
-        @apply text-[1rem] font-normal;
+        @apply text-[1rem] font-normal !important;
         font-family: var(--font-inter);
     }
 
     .text-lg {
-        @apply text-[1.2rem] font-semibold;
+        @apply text-[1.2rem] font-semibold !important;
         font-family: var(--font-poppins);
     }
 
     .text-xl {
-        @apply text-[1.44rem] font-semibold;
+        @apply text-[1.44rem] font-semibold !important;
         font-family: var(--font-poppins);
     }
 
     .text-2xl {
-        @apply text-[1.728rem] font-semibold;
+        @apply text-[1.728rem] font-semibold !important;
         font-family: var(--font-poppins);
     }
 
     .text-3xl {
-        @apply text-[2.074rem] font-semibold;
+        @apply text-[2.074rem] font-semibold !important;
         font-family: var(--font-poppins);
     }
 
     .text-4xl {
-        @apply text-[2.488rem] font-semibold;
+        @apply text-[2.488rem] font-semibold !important;
         font-family: var(--font-poppins);
     }
 
     .text-5xl {
-        @apply text-[2.986rem] font-semibold;
+        @apply text-[2.986rem] font-semibold !important;
         font-family: var(--font-poppins);
     }
 
