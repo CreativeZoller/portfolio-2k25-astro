@@ -1,0 +1,97 @@
+---
+import IconWrapper from '../IconWrapper';
+
+interface SolutionItem {
+    icon: string | any;  // Updated to allow both string and SVG content
+    title: string;
+    description: string;
+}
+
+const solutions: SolutionItem[] = [
+    {
+        icon: await import('../../../public/webdev-icon.svg?raw'),
+        title: "Web Development",
+        description: "We build responsive, user-friendly websites tailored to your needs. From simple pages to complex platforms, we deliver robust online solutions using the latest tech to drive results."
+    },
+    {
+        icon: await import('../../../public/design-icon.svg?raw'),
+        title: "Branding & Design",
+        description: "We define your brand with compelling visuals and messaging. From logos to marketing materials, we create a cohesive brand presence that connects with your audience."
+    },
+    {
+        icon: await import('../../../public/solutions-icon.svg?raw'),
+        title: "IoT Solutions",
+        description: "We design and implement tailored Internet of Things solutions to gather data, automate processes, and improve efficiency for your business."
+    },
+    {
+        icon: await import('../../../public/counseling-icon.svg?raw'),
+        title: "Counseling",
+        description: "We offer expert guidance on technology adoption, digital transformation, and business strategy to empower your success in the digital landscape."
+    }
+];
+
+const stripeSvg = await import('../../../public/stripe.svg?raw');
+---
+
+<section class="bg-dark">
+    <div class="relative container-wrapper pt-24 pb-24" id="solutions-section">
+        <div class="absolute inset-0 bg-dark h-1/2 top-1/2 -z-10"></div>
+        <div class="container mx-auto">
+            <div class="w-full lg:w-10/12 shadow-lg rounded-2xl bg-accent-2 text-light mx-auto">
+                <div class="flex flex-col lg:grid lg:grid-cols-2 relative">
+                    {solutions.map((item, index) => (
+                        <div class={`
+                            flex items-center p-8
+                            ${index % 2 === 0 ? 'lg:border-r border-light/20' : ''} 
+                            ${index < solutions.length - 1 ? 'border-b border-light/20' : ''} 
+                            ${index === 2 ? 'lg:border-b-0' : ''}
+                        `}>
+                            <div class="flex-shrink-0 w-24 h-24">
+                                <div class="bg-light rounded-lg w-20 h-20 flex items-center justify-center p-2">
+                                    {typeof item.icon === 'string' ? (
+                                        <IconWrapper 
+                                            icon={item.icon}
+                                            client:load
+                                        />
+                                    ) : (
+                                        <Fragment set:html={item.icon.default} />
+                                    )}
+                                </div>
+                            </div>
+                            <div class="flex flex-col ml-4">
+                                <h4 class="text-2xl font-medium mb-2">
+                                    {item.title}
+                                </h4>
+                                <p class="text-sm z-20">
+                                    {item.description}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 right-0 z-10">
+            <Fragment set:html={stripeSvg.default} />
+        </div>
+    </div>
+</section>
+
+<style>
+    .container :global(svg) {
+        @apply text-light;
+    }
+    .container-wrapper :global(svg) {
+        @apply w-48 h-48;
+    }
+    .bg-light :global(svg) {
+        width: calc(100% - 8px);
+        height: calc(100% - 8px);
+        max-width: 140px;
+        max-height: 140px;
+    }
+    .absolute.bottom-0.right-0 :global(svg) {
+        width: 140px !important;
+        height: 140px !important;
+    }
+</style>

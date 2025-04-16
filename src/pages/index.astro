@@ -3,6 +3,8 @@ import Layout from '../layouts/Homepage.astro';
 import Navi from "../components/Navi.astro";
 import Hero from "../components/sections/Hero.astro";
 import About from "../components/sections/About.astro";
+import Solutions from "../components/sections/Solutions.astro";
+import RecentProjects from '../components/sections/Recent-projects.astro';
 
 const pageData = {
     title: "Welcome to Astro",
@@ -28,9 +30,9 @@ const heroData = {
 
         <About />
 
-        <section class="section-padding">
-            Solutions section
-        </section>
+        <Solutions />
+
+        <RecentProjects />
 
         <section class="section-padding">
             Clients section
