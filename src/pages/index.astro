@@ -5,6 +5,11 @@ import Hero from "../components/sections/Hero.astro";
 import About from "../components/sections/About.astro";
 import Solutions from "../components/sections/Solutions.astro";
 import RecentProjects from '../components/sections/Recent-projects.astro';
+import Clients from '../components/sections/Clients.astro';
+import ChooseUs from '../components/sections/Choose-us.astro';
+import Process from '../components/sections/Process.astro';
+import FAQ from '../components/sections/Faq.astro';
+import RecentContent from '../components/sections/Recent-content.astro';
 
 const pageData = {
     title: "Welcome to Astro",
@@ -34,20 +39,14 @@ const heroData = {
 
         <RecentProjects />
 
-        <section class="section-padding">
-            Clients section
-        </section>
+        <Clients />
 
-        <section class="section-padding">
-            Why choose us and process
-        </section>
+        <ChooseUs />
 
-        <section class="section-padding">
-            Recent contents section
-        </section>
+        <Process />
 
-        <section class="section-padding">
-            FAQ section
-        </section>
+        <RecentContent />
+
+        <FAQ />
     </main>
 </Layout>

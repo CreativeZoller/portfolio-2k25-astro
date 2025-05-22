@@ -1,18 +1,224 @@
 ---
+const linkIcon = await import('../../../public/open-link-icon.svg?raw');
+const settings = {
+    recentProjects: true
+};
+interface ScrollDirection {
+    direction: 'left' | 'right'
+}
 ---
-<section class="bg-dark">
-    <div 
-        class="relative container-wrapper pt-24 pb-24"
-        id="solutions-section"
-    >
+
+{settings.recentProjects && (
+<section
+    class="bg-dark text-light pt-1 pb-8 container-wrapper"
+    id="projects-section"
+>
+    <div class="container">
         <h3 class="section-title text-4xl text-left w-full md:w-4/12 mb-4 md:mb-0 text-light">
             Recent projects
         </h3>
+        <div class="pager-wrapper flex flex-col items-center gap-4 relative pt-20 pb-4">
+            <div class="pager flex overflow-x-hidden scroll-smooth gap-7 [-ms-overflow-style:none] [scrollbar-width:none]">
+                <div class="pager-item group">
+                    <a href="#" class="block no-underline text-inherit overflow-hidden relative">
+                        <img
+                            src="image.png"
+                            alt="Project 1"
+                            class="w-full h-auto rounded-lg transform scale-100 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:scale-95 group-hover:brightness-110 group-hover:contrast-110"
+                        />
+                        <div class="item-wrapper flex justify-between items-start relative z-10 mt-5 mb-7 px-5 bg-gradient-to-b from-transparent to-dark/80">
+                            <div class="flex flex-col flex-1">
+                                <h6 class="text-lg font-bold group-hover:text-accent-3">Project title 1</h6>
+                                <p class="text-base text-light/70 mt-1 group-hover:text-white">
+                                    Project description 1
+                                </p>
+                            </div>
+                            <div class="flex-shrink-0 w-7 h-6 -m-2 transform rotate-0 transition-transform duration-300 ease-in-out group-hover:rotate-45">
+                                <Fragment set:html={linkIcon.default} />
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="pager-item">
+                    <a href="#" class="item-link">
+                        <img src="image.png" alt="Project 2" class="item-image object-cover" />
+                        <div class="item-wrapper mt-5 mb-7 px-5">
+                            <div class="item-content">
+                                <h6 class="item-title text-lg">
+                                    Project title 2
+                                </h6>
+                                <p class="item-description text-base mt-1">
+                                    project description of project 2
+                                </p>
+                            </div>
+                            <div class="item-icon -m-2">
+                                <Fragment set:html={linkIcon.default} />
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="pager-item">
+                    <a href="#" class="item-link">
+                        <img src="image.png" alt="Project 3" class="item-image object-cover" />
+                        <div class="item-wrapper mt-5 mb-7 px-5">
+                            <div class="item-content">
+                                <h6 class="item-title text-lg">
+                                    Project title 3
+                                </h6>
+                                <p class="item-description text-base mt-1">
+                                    project description of project 3
+                                </p>
+                            </div>
+                            <div class="item-icon -m-2">
+                                <Fragment set:html={linkIcon.default} />
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="pager-item">
+                    <a href="#" class="item-link">
+                        <img src="image.png" alt="Project 4" class="item-image object-cover" />
+                        <div class="item-wrapper mt-5 mb-7 px-5">
+                            <div class="item-content">
+                                <h6 class="item-title text-lg">
+                                    Project title 4
+                                </h6>
+                                <p class="item-description text-base mt-1">
+                                    project description of project 4
+                                </p>
+                            </div>
+                            <div class="item-icon -m-2">
+                                <Fragment set:html={linkIcon.default} />
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="pager-item">
+                    <a href="#" class="item-link">
+                        <img src="image.png" alt="Project 5" class="item-image object-cover" />
+                        <div class="item-wrapper mt-5 mb-7 px-5">
+                            <div class="item-content">
+                                <h6 class="item-title text-lg">
+                                    Project title 5
+                                </h6>
+                                <p class="item-description text-base mt-1">
+                                    project description of project 5
+                                </p>
+                            </div>
+                            <div class="item-icon -m-2">
+                                <Fragment set:html={linkIcon.default} />
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
 
-        here comes a slider with 1 item on mobile and tablet, 2 item on lg, and 3 itms on xl and above
+            <div class="pager-controls-wrapper flex items-center justify-between w-full gap-4">
+                <div class="status-bar relative justify-center w-1/2 lg:w-1/3">
+                    <div class="progress-line w-full h-[1px] bg-accent-3"></div>
+                    <div class="progress-indicator absolute h-1 bg-accent-3 transition-all duration-300"></div>
+                </div>
 
+                <div class="pager-controls flex-[5_0_41.667%] flex gap-3.5 justify-start">
+                    <button
+                        class="pager-button w-[50px] h-[50px] rounded-full bg-accent-3 flex justify-center items-center border-none cursor-pointer transition-all duration-300 relative disabled:opacity-50 disabled:cursor-not-allowed hover:chevron-hover"
+                        aria-label="Scroll left"
+                        scroll-to-left
+                    >
+                        <span class="chevron chevron-left"></span>
+                    </button>
+                    <button
+                        class="pager-button w-[50px] h-[50px] rounded-full bg-accent-3 flex justify-center items-center border-none cursor-pointer transition-all duration-300 relative disabled:opacity-50 disabled:cursor-not-allowed hover:chevron-hover"
+                        aria-label="Scroll right"
+                        scroll-to-right
+                    >
+                        <span class="chevron chevron-right"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
+)}
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const pager = document.querySelector('.pager') as HTMLElement
+        const leftButton = document.querySelector('[scroll-to-left]') as HTMLButtonElement
+        const rightButton = document.querySelector('[scroll-to-right]') as HTMLButtonElement
+        const progressIndicator = document.querySelector('.progress-indicator') as HTMLElement
+        const pagerItems = document.querySelectorAll('.pager-item') as NodeListOf<HTMLElement>
+
+        if (!pager || !leftButton || !rightButton || !progressIndicator || pagerItems.length === 0) return
+
+        const itemCount = pagerItems.length
+
+        function updateScrollProgress() {
+            if (itemCount <= 1) {
+                progressIndicator.style.width = '0%';
+                return;
+            }
+
+            const pagerWidth = pager.offsetWidth;
+            let lastVisibleIndex = 0;
+
+            pagerItems.forEach((item, index) => {
+                const rect = item.getBoundingClientRect();
+                const pagerRect = pager.getBoundingClientRect();
+
+                if (rect.right <= pagerRect.left) {
+                    lastVisibleIndex = Math.max(lastVisibleIndex, index + 1);
+                } else if (rect.left < pagerRect.left) {
+                    lastVisibleIndex = Math.max(lastVisibleIndex, index + 0.5);
+                } else if (rect.left >= pagerRect.left && rect.left < pagerRect.right) {
+                    lastVisibleIndex = Math.max(lastVisibleIndex, index + 1);
+                }
+            });
+
+            const progressPercentage = (lastVisibleIndex / itemCount) * 100;
+            progressIndicator.style.width = `${Math.max(0, Math.min(100, progressPercentage))}%`;
+        }
+
+        function updateButtonStates() {
+            const isAtStart = pager.scrollLeft <= 0
+            const isAtEnd = pager.scrollLeft + pager.offsetWidth >= pager.scrollWidth
+
+            leftButton.disabled = isAtStart
+            rightButton.disabled = isAtEnd
+        }
+
+        function scrollPager(direction: 'left' | 'right') {
+            const pagerItem = pager.querySelector('.pager-item') as HTMLElement
+            if (!pagerItem) return
+
+            const itemWidth = pagerItem.offsetWidth + 28 // Include gap
+            const scrollAmount = direction === 'left' ? -itemWidth : itemWidth
+
+            pager.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            })
+        }
+
+        leftButton.addEventListener('click', () => scrollPager('left'))
+        rightButton.addEventListener('click', () => scrollPager('right'))
+
+        pager.addEventListener('scroll', () => {
+            requestAnimationFrame(() => {
+                updateButtonStates()
+                updateScrollProgress()
+            })
+        })
+
+        window.addEventListener('resize', () => {
+            updateButtonStates();
+            updateScrollProgress();
+        });
+
+        updateButtonStates()
+        updateScrollProgress()
+    })
+</script>
 
 <style>
     .section-title {
@@ -28,5 +234,231 @@
         width: 100%;
         height: 2px;
         background-color: var(--light);
+    }
+
+    .pager-wrapper {
+        @apply pt-20 pb-4;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        position: relative;
+        width: 100%; /* Ensure the wrapper takes full available width */
+    }
+
+    .pager {
+        @apply flex overflow-x-auto scroll-smooth gap-7;
+        scroll-snap-type: x mandatory;
+        -ms-overflow-style: none; /* Hide scrollbar IE and Edge */
+        scrollbar-width: none; /* Hide scrollbar Firefox */
+        width: 100%; /* Ensure the pager also takes full available width */
+    }
+
+    .pager::-webkit-scrollbar {
+        display: none;
+    }
+
+    .pager-item {
+        flex: 0 0 auto; /* Adjust flex-basis to auto */
+        width: calc(100% - 16px); /* Account for the gap */
+        max-width: calc(100% - 16px); /* Ensure it doesn't exceed the pager width */
+        scroll-snap-align: start;
+    }
+
+    @screen md {
+        .pager-item {
+            width: calc(50% - 14px); /* Adjust for gap */
+            max-width: calc(50% - 14px);
+        }
+    }
+
+    @screen lg {
+        .pager-item {
+            width: calc(33.333% - 15px); /* Adjust for gap */
+            max-width: calc(33.333% - 15px);
+        }
+    }
+
+    .pager-item:hover,
+    .pager-item:focus {
+        .item-content {
+            color: var(--white);
+        }
+
+        .item-icon {
+            transform: rotate(45deg);
+        }
+
+        .item-title {
+            color: var(--accent-3);
+        }
+    }
+
+    .pager-controls-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        gap: 16px;
+        margin-top: 1rem; /* Add some margin to separate from the pager on small screens */
+    }
+
+    .status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: var(--light);
+        transition: all 0.3s ease;
+    }
+
+    .status-dot.active {
+        width: 24px; /* Pill shape for active dot */
+        height: 8px;
+        border-radius: 16px;
+        background-color: var(--white);
+    }
+
+    .pager-controls {
+        flex: 5 0 41.667%; /* Remaining width */
+        display: flex;
+        gap: 14px;
+        justify-content: flex-start;
+    }
+
+    .pager-button {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: var(--accent-3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .pager-button:hover {
+        .chevron-left {
+            border-left-color: var(--dark);
+            border-bottom-color: var(--dark);
+        }
+
+        .chevron-right {
+            border-right-color: var(--dark);
+            border-top-color: var(--dark);
+        }
+    }
+
+    .pager-button:disabled {
+        background-color: var(--accent-3);
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    .chevron {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 24px;
+        height: 24px;
+        border: solid transparent;
+        border-width: 3px;
+        transition: all 0.3s ease;
+    }
+
+    .chevron-left {
+        transform: translate(-35%, -50%) rotate(45deg);
+        border-left-color: var(--light);
+        border-bottom-color: var(--light);
+    }
+
+    .chevron-right {
+        transform: translate(-75%, -50%) rotate(45deg);
+        border-right-color: var(--light);
+        border-top-color: var(--light);
+    }
+
+    .pager-button:hover .chevron-left {
+        border-left-color: var(--dark);
+        border-bottom-color: var(--dark);
+    }
+
+    .pager-button:hover .chevron-right {
+        border-right-color: var(--dark);
+        border-top-color: var(--dark);
+    }
+
+    .item-link {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .item-image {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        transform: scale(1);
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .pager-item:hover .item-image,
+    .pager-item:focus .item-image {
+        transform: scale(.95);
+        filter: brightness(1.1) contrast(1.1);
+    }
+
+    .item-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        position: relative;
+        z-index: 1;
+        background: linear-gradient(
+            to bottom,
+            rgba(34, 56, 67, 0) 0%,
+            rgba(34, 56, 67, 0.8) 100%
+        );
+    }
+
+    .item-content {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .item-icon {
+        flex-shrink: 0;
+        width: 28px;
+        height: 24px;
+        transform: rotate(0deg);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .pager-item:hover .item-icon,
+    .pager-item:focus .item-icon {
+        transform: rotate(45deg);
+    }
+
+    .item-text {
+        flex: 1;
+    }
+
+    .item-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+
+    .item-description {
+        font-size: 1rem;
+        color: var(--light-gray);
+    }
+
+    .progress-indicator {
+        will-change: width;
     }
 </style>

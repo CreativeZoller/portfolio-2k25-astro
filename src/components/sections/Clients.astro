@@ -1,0 +1,57 @@
+---
+const logos = [
+    "logo1.png",
+    "logo2.png",
+    "logo3.png",
+    "logo4.png"
+];
+
+const speed = 5; // pixels per second, adjust freely
+---
+<section 
+    class="relative container-wrapper pt-4 pb-16" 
+    id="clients-section"
+>
+    <div class="container">
+        <div class="section-content space-y-12">
+            <h3 class="section-title text-4xl text-left w-full mb-4 md:mb-0">
+                Recent Clients
+            </h3>
+            <div class="marquee-wrapper" style={`--speed: ${speed}`}>  
+                <div class="marquee-content">
+                    {logos.concat(logos).map((logo, index) => (
+                    <img
+                        src={`/logos/${logo}`}
+                        alt={`Logo ${index}`}
+                        class="mx-6 object-contain w-auto h-[32px] transition-all duration-300 md:h-[54px]"
+                        loading="lazy"
+                        width="auto"
+                    />
+                    ))}
+                    <!-- todo: fix this behavior for small devices with height -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .marquee-wrapper {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        background-color: transparent;
+    }
+
+    .marquee-content {
+        display: flex;
+        width: max-content;
+        animation: scroll linear infinite;
+        animation-duration: calc(120s / var(--speed));
+    }
+
+    @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+</style>

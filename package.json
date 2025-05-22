@@ -15,7 +15,8 @@
     "astro": "^5.5.5",
     "astro-icon": "^1.1.5",
     "preact": "^10.26.5",
-    "prop-types": "^15.8.1"
+    "prop-types": "^15.8.1",
+    "solid-js": "^1.9.5"
   },
   "devDependencies": {
     "@astrojs/react": "^3.6.3",

@@ -1,0 +1,100 @@
+---
+const settings = {
+    faq: true // Enable the section
+};
+const accordionItems = [
+    {
+        title: 'What is your current availability?',
+        content: 'My capacity is dynamic and subject to change. To maintain the highest quality, I commit to a limited number of projects simultaneously. Please feel free to reach out to discuss your specific needs and my current availability in detail.'
+    },
+    {
+        title: 'What are your fees?',
+        content: 'There’s a common saying, "Cheap meat yields dilute soup," which unfortunately holds true in software development. I don’t believe in quick, superficial fixes. With over ten years of international experience, I guarantee that quality work demands both time and expertise. My fees are project-dependent, tailored to the complexity of the task at hand. While I don’t charge the rates of a large development agency, I do believe in fair compensation for the quality I deliver. Please contact me with your unique project ideas!'
+    },
+    {
+        title: 'Do you offer fixed or hourly rates?',
+        content: 'As an independent professional, I typically operate on an hourly rate basis. However, for certain projects and specific requirements, I do prefer fixed rates. Every quote is preceded by a thorough needs assessment, as no two projects are identical. Only after carefully considering these factors can I provide you with a personalized proposal.'
+    },
+    {
+        title: 'What advance payment do you require?',
+        content: 'I typically request a 50% advance payment, which clients pay after signing the contract. This arrangement ensures both active and committed collaboration from your side, and it guarantees the seriousness of the project for me. The remaining 50% of the fee is due upon project completion. The client receives the project components outlined in the contract once full payment is received. For long-term, successful collaborations, I also offer a "loyal customer discount."'
+    },
+    {
+        title: 'Why do you require an advance payment?',
+        content: 'It’s not about my next meal. :) As I mentioned previously, an advance payment fosters active collaboration and affirms the serious nature of the project. We’ve all experienced situations where either the client or the contractor disappears mid-project, leaving one party without payment or results. I do not undertake projects without an advance payment, as mutual trust and commitment are fundamental to a successful partnership.'
+    },
+    {
+        title: 'What types of projects do you undertake?',
+        content: 'I handle a diverse range of projects. A preliminary meeting (rather than just a proposal request) can offer you more detailed insights into my capabilities. My objective is twofold: I aim to bring my clients’ visions to life as quickly as possible and with the highest quality imaginable. In essence, I am dedicated to planning, developing, and advising on web service interfaces and functionalities. Furthermore, I provide multilingual content management, and upon project completion, I offer technical and management support.'
+    },
+    {
+        title: 'What types of projects do you not undertake?',
+        content: 'Anything not listed above, or that we cannot mutually agree upon. For instance, I do not provide continuous content management or editorial support, system administration tasks, hosting services, multilingual translations or literary revisions, SEO services, or printed corporate identity materials. However, I maintain a strong professional network, so if you require assistance with projects I don’t handle, I can likely recommend a trusted specialist.'
+    },
+    {
+        title: 'How does a collaboration typically begin?',
+        content: 'Firstly, we discuss your requirements in detail. I begin with broad questions, then delve into more specific inquiries about the project and anticipated changes. Following this, I perform the necessary calculations and send you a cost estimate within 48 hours. I’m also available to present this estimate in a meeting. Once you accept my offer, we sign the contract, and our collaboration commences.'
+    }
+];
+---
+{settings.faq && (
+<section 
+    class="relative container-wrapper py-12" 
+    id="faq-section"
+>
+    <div class="container">
+        <div class="section-content space-y-12">
+            <h3 class="section-title text-4xl text-left w-full md:w-5/12 mb-4 md:mb-0">
+                Frequently Asked Questions
+            </h3>
+            <p class="section-text text-base">
+                Here, you’ll find answers to common questions about the content I share, my approach to balancing tech 
+                projects with parenting, and the inspiration behind the stories and tips on this site. Whether you’re 
+                curious about my coding philosophy or how I manage daily adventures with my kids, this section offers 
+                insights to help you navigate our shared journey.
+            </p>
+        </div>
+
+        <div class="space-y-8 pt-8">
+            {accordionItems.map((item, index) => (
+                <details class="accordion cursor-pointer group rounded-md p-4 shadow-md/23 hover:shadow-md transition-all">
+                    <summary class="text-lg flex justify-between items-center">
+                        {item.title}
+                        <span class="transition-transform group-open:rotate-45 duration-300 accordion-icon">+</span>
+                    </summary>
+                    <div class="mt-2 text-base">
+                        {item.content}
+                    </div>
+                </details>
+            ))}
+        </div>
+
+    </div>
+</section>
+)}
+
+<style>
+    .section-title {
+        position: relative;
+        margin-top: 16px;
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        top: -16px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: var(--accent-1);
+    }
+
+    .accordion {
+        background-color: var(--white);
+        color: var(--accent-1);
+    }
+
+    .accordion-icon {
+        color: var(--accent-3)
+    }
+</style>

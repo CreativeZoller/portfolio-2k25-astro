@@ -16,6 +16,9 @@ export default {
         inter: ["Inter", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
       },
+      borderWidth: {
+        '3': '3px',
+      },
     },
   },
   plugins: [],

@@ -1,0 +1,142 @@
+---
+import BlogCard from './../BlogCard.astro';
+
+const posts = [
+  {
+    title: 'Bill Walsh leadership lessons',
+    slug: 'bill-walsh-leadership',
+    image: 'https://placehold.co/640x360?text=Mountains',
+    author: 'Alec Whiten',
+    date: '1 Jan 2023',
+    description: 'Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?',
+    tags: [
+      { name: 'Leadership', class: 'bg-blue-100' },
+      { name: 'Management', class: 'bg-yellow-100' },
+    ],
+  },
+  {
+    title: 'PM mental models',
+    slug: 'pm-mental-models',
+    image: 'https://placehold.co/640x360?text=Notes',
+    author: 'Demi Wilkinson',
+    date: '1 Jan 2023',
+    description: 'Mental models are simple expressions of complex processes or relationships.',
+    tags: [
+      { name: 'Product', class: 'bg-yellow-100' },
+      { name: 'Research', class: 'bg-purple-100' },
+      { name: 'Frameworks', class: 'bg-pink-100' },
+    ],
+  },
+  {
+    title: 'What is Wireframing?',
+    slug: 'what-is-wireframing',
+    image: 'https://placehold.co/640x360?text=Workspace',
+    author: 'Candice Wu',
+    date: '1 Jan 2023',
+    description: 'Introduction to Wireframing and its Principles. Learn from the best in the industry.',
+    tags: [
+      { name: 'Design', class: 'bg-indigo-100' },
+      { name: 'Research', class: 'bg-red-100' },
+    ],
+  },
+  {
+    title: 'Another Great Article',
+    slug: 'another-article',
+    image: 'https://placehold.co/640x360?Text=Abstract',
+    author: 'Jane Doe',
+    date: '5 Jan 2023',
+    description: 'This is another interesting article for testing the layout.',
+    tags: [
+      { name: 'Technology', class: 'bg-gray-100' },
+      { name: 'Innovation', class: 'bg-blue-100' },
+    ],
+  },
+  {
+    title: 'The Power of Collaboration',
+    slug: 'power-of-collaboration',
+    image: 'https://placehold.co/640x360?Text=Teamwork',
+    author: 'Peter Smith',
+    date: '10 Jan 2023',
+    description: 'Exploring how collaboration can drive success in any field.',
+    tags: [
+      { name: 'Teamwork', class: 'bg-green-100' },
+      { name: 'Strategy', class: 'bg-yellow-100' },
+    ],
+  },
+];
+const featuredPosts = posts.slice(0, 3);
+
+const settings = {
+    recentContent: true
+};
+---
+{settings.recentContent && (
+<section
+    class="relative container-wrapper py-12"
+    id="contents-section"
+>
+    <div class="container">
+        <h3 class="section-title text-4xl text-left w-full md:w-5/12 mb-4 md:mb-0">
+            Recent contents
+        </h3>
+
+        <div class="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {featuredPosts.map((post) => (
+            <BlogCard
+                title={post.title}
+                slug={post.slug}
+                image={post.image}
+                author={post.author}
+                date={post.date}
+                description={post.description}
+                tags={post.tags}
+            />
+        ))}
+        </div>
+
+        <p class="section-text text-base flex justify-center">
+            <button 
+                id="load-more"
+                class="bg-accent-3 text-white text-base py-5 px-2.5 rounded-xl border-none transition-all duration-300 hover:text-dark hover:shadow-lg"
+            >
+                View all content
+            </button>
+        </p>
+    </div>
+</section>
+)}
+
+<style>
+    .section-title {
+        position: relative;
+        margin-top: 16px;
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        top: -16px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: var(--accent-1);
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+        .grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .grid {
+        grid-template-columns: repeat(3, 1fr);
+        }
+    }
+</style>

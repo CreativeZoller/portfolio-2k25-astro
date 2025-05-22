@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Homepage.astro';
+import Navi from "../components/Navi.astro";
+import Hero from "../components/sections/Hero.astro";
+
+const pageData = {
+    title: "Welcome to Astro",
+    description: "A modern portfolio website built with Astro",
+    author: "Your Name",
+    keywords: ["astro", "portfolio", "web development"],
+    image: "/images/hero.jpg",
+    canonicalURL: "https://yoursite.com"
+};
+
+const heroData = {
+    background: "/heroimage-contents.jpg"
+};
+---
+<Layout {...pageData}>
+    <main class="container-wrapper">
+        <Hero {...heroData} />
+
+        <Navi />
+
+        <SearchContent />
+
+        <RecentBlogPosts />
+
+        <RecentPodcasts />
+
+    </main>
+</Layout>
