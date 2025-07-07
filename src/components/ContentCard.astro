@@ -1,0 +1,224 @@
+---
+export interface Props {
+    title: string;
+    description: string;
+    image: string;
+    url: string;
+    tags?: string[];
+    variant?: "normal" | "wide" | "small";
+    author?: string;
+    date?: string;
+    contentType?: "blog" | "podcast";
+}
+const blogIcon = await import('../../public/blogcard-link-icon.svg?raw');
+const podcastIcon = await import('../../public/blogcard-headphone-icon.svg?raw');
+const {
+    title,
+    description,
+    image,
+    url,
+    tags = [],
+    variant = "normal",
+    author,
+    date,
+    contentType = "blog"
+} = Astro.props;
+const formattedDate = date ? new Date(date).toLocaleDateString() : "";
+const iconSvg = contentType === "podcast" ? podcastIcon.default : blogIcon.default;
+---
+
+<div class={`card card--${variant}`}>
+    <a href={url} class="card__image-link" tabindex="-1">
+        <img src={image} alt={title} class="card__image" loading="lazy" />
+    </a>
+    <div class="card__content">
+        {(author || formattedDate) && (
+            <div class="card__meta">
+                {author && <span class="card__author">{author}</span>}
+                {author && formattedDate && <span class="card__dot">•</span>}
+                {formattedDate && <span class="card__date">{formattedDate}</span>}
+            </div>
+        )}
+        <a href={url} class="card__title-link group">
+            <h3 class="card__title">{title}</h3>
+            <span class="card__icon" aria-hidden="true">
+                <Fragment set:html={iconSvg} />
+            </span>
+        </a>
+        <p class="card__description">{description}</p>
+        {tags.length > 0 && (
+            <ul class="card__tags">
+                {tags.map(tag => (
+                    <li class="card__tag">
+                        <a href={`/tags/${encodeURIComponent(tag)}/`} class="card__tag-link" onclick="event.stopPropagation();">{tag}</a>
+                    </li>
+                ))}
+            </ul>
+        )}
+    </div>
+</div>
+
+<style>
+.card {
+    background: #fff;
+    border-radius: 1.25rem;
+    box-shadow: 0 2px 8px 0 rgba(16,30,54,0.06);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s;
+    padding: 0;
+    height: 100%;
+}
+
+/* Wide: same as normal, image on top, content below */
+.card--wide {
+    flex-direction: column;
+}
+
+/* Small: row layout only on large screens */
+.card--small {
+    flex-direction: column;
+}
+@media (min-width: 1280px) {
+    .card--small {
+        flex-direction: row;
+        align-items: stretch;
+    }
+}
+
+/* Image link for all variants */
+.card__image-link {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background: #f3f4f6;
+    flex-shrink: 0;
+}
+
+/* Small image: row layout only on large screens */
+.card--small .card__image-link {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    aspect-ratio: 16/9;
+    margin-right: 0;
+    height: auto;
+}
+@media (min-width: 1280px) {
+    .card--small .card__image-link {
+        width: 280px;
+        min-width: 280px;
+        max-width: 280px;
+        aspect-ratio: 1/1;
+        height: 100%;
+        margin-right: 1rem;
+    }
+}
+
+/* Content for all variants */
+.card__content {
+    padding: 1.5rem 1.5rem 1.2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Small content: row layout only on large screens */
+.card--small .card__content {
+    padding: 1.5rem 1.5rem 1.2rem 1.5rem;
+    justify-content: flex-start;
+}
+@media (min-width: 1280px) {
+    .card--small .card__content {
+        padding: 1rem 1rem 0.8rem 0;
+        justify-content: center;
+    }
+}
+.card__meta {
+    font-size: 0.95em;
+    color: #a0aec0;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+}
+.card__author {
+    color: #a78bfa;
+    font-weight: 500;
+}
+.card__dot {
+    margin: 0 0.3em;
+}
+.card__title-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    text-decoration: none;
+    color: inherit;
+    margin-bottom: 0.3em;
+}
+.card__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+    transition: color 0.2s;
+}
+.card__icon {
+    width: 22px;
+    height: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-1, #6366f1);
+    transition: transform 0.3s;
+}
+.card__title-link:hover .card__icon,
+.card__title-link:focus .card__icon {
+    transform: rotate(45deg);
+}
+.card__title-link:hover .card__title,
+.card__title-link:focus .card__title {
+    color: var(--accent-2, #a78bfa);
+}
+.card__description {
+    color: #4b5563;
+    font-size: 1em;
+    margin: 0 0 1em 0;
+    flex: 1;
+}
+.card__tags {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+.card__tag {
+    margin: 0;
+}
+.card__tag-link {
+    display: inline-block;
+    background: #f3f4f6;
+    border-radius: 999px;
+    padding: 0.25em 0.9em;
+    font-size: 0.92em;
+    font-weight: 500;
+    color: #6366f1;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+.card__tag-link:hover,
+.card__tag-link:focus {
+    background: #6366f1;
+    color: #fff;
+}
+.card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+</style>

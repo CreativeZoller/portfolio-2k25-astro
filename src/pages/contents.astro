@@ -2,6 +2,8 @@
 import Layout from '../layouts/Homepage.astro';
 import Navi from "../components/Navi.astro";
 import Hero from "../components/sections/Hero.astro";
+import RecentBlogPosts from "../components/sections/Recent-posts.astro";
+import RecentPodcasts from "../components/sections/Recent-podcasts.astro";
 
 const pageData = {
     title: "Welcome to Astro",
@@ -13,7 +15,9 @@ const pageData = {
 };
 
 const heroData = {
-    background: "/heroimage-contents.jpg"
+    background: "/heroimage-contents.jpg",
+    heading: "",
+    description: ""
 };
 // for proper searching under any content pages: https://dteather.com/blogs/astro-search-bar/
 ---
