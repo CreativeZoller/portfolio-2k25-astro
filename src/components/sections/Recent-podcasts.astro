@@ -80,8 +80,7 @@ const settings = {
                         Recent podcasts
                     </h3>
 
-                    <div class="grid grid-cols-1 gap-6 xl:grid-cols-12">
-                        {/* First row: wide + subgrid of two smalls */}
+                    <div class="grid grid-cols-1 gap-6 xl:grid-cols-12 text-dark">
                         <div class="xl:col-span-6 flex flex-col">
                             <ContentCard {...recentBlogPosts[0]} variant="wide" />
                         </div>
@@ -91,7 +90,6 @@ const settings = {
                                 <ContentCard {...recentBlogPosts[2]} variant="small" />
                             </div>
                         </div>
-                        {/* Second row: three normals */}
                         <div class="xl:col-span-4">
                             <ContentCard {...recentBlogPosts[3]} variant="normal" />
                         </div>

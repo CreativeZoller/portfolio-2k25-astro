@@ -25,6 +25,11 @@ const {
 } = Astro.props;
 const formattedDate = date ? new Date(date).toLocaleDateString() : "";
 const iconSvg = contentType === "podcast" ? podcastIcon.default : blogIcon.default;
+
+// todo: fix color usage
+// todo: remove classes where possible
+// todo: add floating background behind recentPodcasts
+// todo: add floating background behinf recentProjects
 ---
 
 <div class={`card card--${variant}`}>
