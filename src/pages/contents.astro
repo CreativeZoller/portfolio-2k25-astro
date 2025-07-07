@@ -15,14 +15,13 @@ const pageData = {
 const heroData = {
     background: "/heroimage-contents.jpg"
 };
+// for proper searching under any content pages: https://dteather.com/blogs/astro-search-bar/
 ---
 <Layout {...pageData}>
     <main class="container-wrapper">
         <Hero {...heroData} />
 
         <Navi />
-
-        <SearchContent />
 
         <RecentBlogPosts />
 
