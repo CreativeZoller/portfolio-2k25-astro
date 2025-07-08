@@ -69,45 +69,47 @@ const settings = {
 
 {settings.recentPosts && (
     <section
-        class="bg-dark text-light relative container-wrapper py-12"
+        class="full-bleed bg-dark text-light py-12"
         id="blog-posts-section"
     >
-        <div class="container">
-            <div class="section-content space-y-12">
-                <div class="flex flex-col md:gap-8">
-                    <h3 class="section-title text-4xl text-left w-full md:w-4/12 mb-4 md:mb-0 text-light">
-                        Recent podcasts
-                    </h3>
+        <div class="container-wrapper mx-auto px-4 md:px-8 lg:px-[4.25rem]">
+            <div class="container">
+                <div class="section-content space-y-12">
+                    <div class="flex flex-col md:gap-8">
+                        <h3 class="section-title text-4xl text-left w-full md:w-4/12 mb-4 md:mb-0 text-light">
+                            Recent podcasts
+                        </h3>
 
-                    <div class="grid grid-cols-1 gap-6 xl:grid-cols-12 xl:items-stretch">
-                        <div class="xl:col-span-6 h-full flex flex-col">
-                            <ContentCard {...recentBlogPosts[0]} variant="wide" />
-                        </div>
-                        <div class="xl:col-span-6 h-full flex flex-col">
-                            <div class="flex flex-col gap-6 h-full">
-                                <ContentCard {...recentBlogPosts[1]} variant="small" />
-                                <ContentCard {...recentBlogPosts[2]} variant="small" />
+                        <div class="grid grid-cols-1 gap-6 xl:grid-cols-12 xl:items-stretch">
+                            <div class="xl:col-span-6 h-full flex flex-col">
+                                <ContentCard {...recentBlogPosts[0]} variant="wide" />
+                            </div>
+                            <div class="xl:col-span-6 h-full flex flex-col">
+                                <div class="flex flex-col gap-6 h-full">
+                                    <ContentCard {...recentBlogPosts[1]} variant="small" />
+                                    <ContentCard {...recentBlogPosts[2]} variant="small" />
+                                </div>
+                            </div>
+                            <div class="xl:col-span-4">
+                                <ContentCard {...recentBlogPosts[3]} variant="normal" />
+                            </div>
+                            <div class="xl:col-span-4">
+                                <ContentCard {...recentBlogPosts[4]} variant="normal" />
+                            </div>
+                            <div class="xl:col-span-4">
+                                <ContentCard {...recentBlogPosts[5]} variant="normal" />
                             </div>
                         </div>
-                        <div class="xl:col-span-4">
-                            <ContentCard {...recentBlogPosts[3]} variant="normal" />
-                        </div>
-                        <div class="xl:col-span-4">
-                            <ContentCard {...recentBlogPosts[4]} variant="normal" />
-                        </div>
-                        <div class="xl:col-span-4">
-                            <ContentCard {...recentBlogPosts[5]} variant="normal" />
-                        </div>
-                    </div>
 
-                    <p class="section-text text-base flex justify-center mt-8">
-                        <button
-                            id="load-more"
-                            class="bg-accent-3 text-white text-base py-5 px-2.5 rounded-xl border-none transition-all duration-300 hover:text-dark hover:shadow-lg"
-                        >
-                            View all episodes
-                        </button>
-                    </p>
+                        <p class="section-text text-base flex justify-center mt-8">
+                            <button
+                                id="load-more"
+                                class="bg-accent-3 text-white text-base py-5 px-2.5 rounded-xl border-none transition-all duration-300 hover:text-dark hover:shadow-lg"
+                            >
+                                View all episodes
+                            </button>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

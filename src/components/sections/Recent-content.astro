@@ -1,68 +1,43 @@
 ---
-import BlogCard from './../BlogCard.astro';
+import ContentCard from './../ContentCard.astro';
 
 const posts = [
   {
-    title: 'Bill Walsh leadership lessons',
-    slug: 'bill-walsh-leadership',
-    image: 'https://placehold.co/640x360?text=Mountains',
-    author: 'Alec Whiten',
-    date: '1 Jan 2023',
-    description: 'Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?',
-    tags: [
-      { name: 'Leadership', class: 'bg-blue-100' },
-      { name: 'Management', class: 'bg-yellow-100' },
-    ],
+    "title": "Bill Walsh leadership lessons",
+    "description": "Linear helps streamline software projects, sprints, tasks, and bug tracking. Here’s how to get started...",
+    "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1280&q=80",
+    "url": "/podcast/migrating-to-linear-101",
+    "tags": ["Leadership", "Management"],
+    "author": "Phoenix Baker",
+    "date": "2023-01-01"
   },
   {
-    title: 'PM mental models',
-    slug: 'pm-mental-models',
-    image: 'https://placehold.co/640x360?text=Notes',
-    author: 'Demi Wilkinson',
-    date: '1 Jan 2023',
-    description: 'Mental models are simple expressions of complex processes or relationships.',
-    tags: [
-      { name: 'Product', class: 'bg-yellow-100' },
-      { name: 'Research', class: 'bg-purple-100' },
-      { name: 'Frameworks', class: 'bg-pink-100' },
-    ],
+    "title": "PM mental models",
+    "description": "Mental models are simple expressions of complex processes or relationships.",
+    "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1280&q=80",
+    "url": "/podcast/building-your-api-stack",
+    "tags": ["Product", "Research", "Frameworks"],
+    "author": "Lana Steiner",
+    "date": "2023-01-01"
   },
   {
-    title: 'What is Wireframing?',
-    slug: 'what-is-wireframing',
-    image: 'https://placehold.co/640x360?text=Workspace',
-    author: 'Candice Wu',
-    date: '1 Jan 2023',
-    description: 'Introduction to Wireframing and its Principles. Learn from the best in the industry.',
-    tags: [
-      { name: 'Design', class: 'bg-indigo-100' },
-      { name: 'Research', class: 'bg-red-100' },
-    ],
+    "title": "What is Wireframing?",
+    "description": "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    "image": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1280&q=80",
+    "url": "/podcast/remote-workspaces",
+    "tags": ["Design", "Research"],
+    "author": "Alex Kim",
+    "date": "2023-01-01"
   },
   {
-    title: 'Another Great Article',
-    slug: 'another-article',
-    image: 'https://placehold.co/640x360?Text=Abstract',
-    author: 'Jane Doe',
-    date: '5 Jan 2023',
-    description: 'This is another interesting article for testing the layout.',
-    tags: [
-      { name: 'Technology', class: 'bg-gray-100' },
-      { name: 'Innovation', class: 'bg-blue-100' },
-    ],
-  },
-  {
-    title: 'The Power of Collaboration',
-    slug: 'power-of-collaboration',
-    image: 'https://placehold.co/640x360?Text=Teamwork',
-    author: 'Peter Smith',
-    date: '10 Jan 2023',
-    description: 'Exploring how collaboration can drive success in any field.',
-    tags: [
-      { name: 'Teamwork', class: 'bg-green-100' },
-      { name: 'Strategy', class: 'bg-yellow-100' },
-    ],
-  },
+    "title": "Another Great Article",
+    "description": "This is another interesting article for testing the layout.",
+    "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1280&q=80",
+    "url": "/podcast/bill-walsh-leadership-lessons",
+    "tags": ["Technology", "_Innovation"],
+    "author": "Alec Whitten",
+    "date": "2023-01-01"
+  }
 ];
 const featuredPosts = posts.slice(0, 3);
 
@@ -82,20 +57,12 @@ const settings = {
 
         <div class="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {featuredPosts.map((post) => (
-            <BlogCard
-                title={post.title}
-                slug={post.slug}
-                image={post.image}
-                author={post.author}
-                date={post.date}
-                description={post.description}
-                tags={post.tags}
-            />
+            <ContentCard {...post} />
         ))}
         </div>
 
         <p class="section-text text-base flex justify-center">
-            <button 
+            <button
                 id="load-more"
                 class="bg-accent-3 text-white text-base py-5 px-2.5 rounded-xl border-none transition-all duration-300 hover:text-dark hover:shadow-lg"
             >
