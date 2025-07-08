@@ -1,5 +1,4 @@
 ---
-// todo: fix colors, use tailwind and variables, add full width for bg
 import ContentCard from './../ContentCard.astro';
 const recentBlogPosts = [
     {
@@ -80,12 +79,12 @@ const settings = {
                         Recent podcasts
                     </h3>
 
-                    <div class="grid grid-cols-1 gap-6 xl:grid-cols-12 text-dark">
-                        <div class="xl:col-span-6 flex flex-col">
+                    <div class="grid grid-cols-1 gap-6 xl:grid-cols-12 xl:items-stretch">
+                        <div class="xl:col-span-6 h-full flex flex-col">
                             <ContentCard {...recentBlogPosts[0]} variant="wide" />
                         </div>
-                        <div class="xl:col-span-6 flex flex-col">
-                            <div class="flex flex-col gap-6 h-full xl:h-auto">
+                        <div class="xl:col-span-6 h-full flex flex-col">
+                            <div class="flex flex-col gap-6 h-full">
                                 <ContentCard {...recentBlogPosts[1]} variant="small" />
                                 <ContentCard {...recentBlogPosts[2]} variant="small" />
                             </div>
