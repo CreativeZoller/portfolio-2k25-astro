@@ -40,7 +40,7 @@ const helperText = contentType === "podcast" ? "Listen to this episode" : "Read 
                 {formattedDate && <span class="card-date opacity-80">{formattedDate}</span>}
             </div>
         )}
-        <a href={url} class="card-title-link group block text-accent-1 no-underline cursor-pointer">
+        <a href={url} class="card-title-link group block text-accent-1 no-underline cursor-pointer" title={title}>
             <hgroup class="text-lg font-semibold mb-2 flex items-baseline justify-between">
                 <h3 class="card-title transition-colors duration-300 ease-in-out text-accent-1">{title}</h3>
                 <span class="card-icon text-accent-1 origin-center hover:text-accent-2" aria-hidden="true">
